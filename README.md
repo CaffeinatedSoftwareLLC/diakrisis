@@ -24,8 +24,8 @@ You give the model a text and one or more typed questions. It returns a probabil
 
 ## espresso-380m in short
 
-- A 380M encoder distilled from Cloudflare Clef-flash (9.4B).
-- Overall accuracy on 19 audit suites: 0.795, against 0.793 for the teacher. Hosted Jev 1.14 scores 0.821.
+- A 380M encoder distilled from Cloudflare Clef-flash (9.4B). It runs on a CPU with ONNX Runtime and needs no PyTorch.
+- Overall accuracy on 19 audit suites: 0.795, against 0.793 for the teacher. The hosted Gemini Decision 1 and Jev 1.14 score 0.828 and 0.821.
 - It passed its one-shot confirmation, and 7 of 9 retention checks against its base model.
 - On many-option choices it returns REVIEW when it is unsure, so a human can decide.
 - English only. Apache-2.0.
@@ -38,11 +38,26 @@ Model page: https://huggingface.co/diakrisis/espresso-380m
 
 | Path | Contents |
 |---|---|
-| `espresso-380m/` | model card, frozen decision rule, comparison table |
+| `espresso-380m/` | model card, wrapper (`espresso.py`), frozen decision rule, comparison table |
 | `logo/` | family marks and banners |
 | `LICENSE`, `NOTICE` | Apache-2.0 and attributions |
 
-TODO: inference wrapper and quick start.
+## Quick start
+
+```bash
+pip install onnxruntime tokenizers safetensors numpy
+```
+
+```python
+from espresso import Espresso
+
+m = Espresso("espresso-380m")  # path to the downloaded model folder
+m.decide("I was charged twice this month.", {
+    "billing": {"type": "noul", "instructions": "Is this about billing?"},
+})
+```
+
+The wrapper is [`espresso-380m/espresso.py`](espresso-380m/espresso.py). The model files are on the model page above.
 
 ## Licence
 
