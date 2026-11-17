@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-label="Diakrisis doppio">
+  <rect width="64" height="64" rx="14" fill="#C2703E"/>
+  <clipPath id="g"><path d="M20 14V42a6 6 0 0 0 6 6H38a6 6 0 0 0 6-6V14Z"/></clipPath>
+  <rect y="23" width="64" height="64" fill="#24170f" clip-path="url(#g)"/>
+  <path d="M18 13V42a8 8 0 0 0 8 8H38a8 8 0 0 0 8-8V13" fill="none" stroke="#FDF3E2" stroke-width="4" stroke-linecap="round"/>
+</svg>

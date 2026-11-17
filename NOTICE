@@ -1,0 +1,8 @@
+diakrisis/espresso-380m - Copyright 2026 Caffeinated Software LLC. Licensed under the Apache License, Version 2.0.
+
+Fine-tuned from vllm-sr/vela3-fast (Apache-2.0), itself based on dmis-lab/UltraBERT-380M (Apache-2.0).
+Distilled from Cloudflare Clef-flash (Apache-2.0).
+Training data includes: LEDGAR and SCOTUS from LexGLUE (CC-BY-4.0); CLINC150 (CC-BY-3.0);
+DynaBench (MIT); typed-decisions-synth (MIT);
+tasksource typed decisions (commercial-licensed rows only);
+ABCD (MIT); LLMail-Inject (MIT); PromptShield (Apache-2.0).

@@ -1,0 +1,8 @@
+{
+ "delta_none": 0.25,
+ "b_pass": -0.15,
+ "tau": 0.88,
+ "min_options": 50,
+ "source": "R12 selection: S42 step-3000 (scripts/r12_calibrate.py, objective min_max_silent_error_within_budget)",
+ "calibration_sha256": "545bfcad784f2328d02eccd7d5b9ed0bed57c4caba5078b9f24dde4b52bc9acf"
+}
