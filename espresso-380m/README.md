@@ -39,7 +39,7 @@ What is inside:
 
 - Base encoder: `vllm-sr/vela3-fast` (itself based on `dmis-lab/UltraBERT-380M`), fine-tuned with a LoRA adapter (rank 16) plus small decision heads.
 - Two ONNX builds for CPU (below).
-- A frozen decision rule, `R12_DECISION_RULE.json`.
+- A frozen decision rule, `decision_rule.json`.
 - A small wrapper, `espresso.py`.
 
 ## Quick start
@@ -116,7 +116,7 @@ The aim is to send uncertain many-option cases to a human instead of answering w
 - Bare encoder: about 76 ms for 64 tokens, about 240 ms for 256 tokens.
 - Windowed attention on the 16 local layers gives identical results and is up to 39% faster than dense attention at 8k tokens.
 
-## Evaluation status (honest)
+## Evaluation status
 
 - **The audit did not fully pass.** It has 9 retention checks against the base model. Espresso passed 7. The two misses are narrow:
   - Long-input retention: the lower 95% bound was −0.0200; the limit was above −0.02.
